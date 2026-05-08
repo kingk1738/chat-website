@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regal Chauffeuring | Executive Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Regal Chauffeuring home">
+          <span class="brand__mark">RC</span>
+          <span>Regal Chauffeuring</span>
+        </a>
+        <div class="nav__links">
+          <a href="#services">Services</a>
+          <a href="#booking">Book now</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section class="hero__content" id="top">
+        <div class="hero__copy">
+          <p class="eyebrow">Private chauffeur hire across the UK</p>
+          <h1>Arrive relaxed, on time, and in complete comfort.</h1>
+          <p class="hero__lead">
+            Premium chauffeur journeys for airport transfers, executive travel,
+            events, and special occasions. Clear pricing at £2 per mile plus a
+            £25 booking fee.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#booking">Get an instant quote</a>
+            <a class="button button--ghost" href="tel:+440000000000">Call us</a>
+          </div>
+        </div>
+        <aside class="hero__card" aria-label="Service highlights">
+          <div>
+            <span class="stat">24/7</span>
+            <p>Pre-booked executive travel</p>
+          </div>
+          <div>
+            <span class="stat">£2</span>
+            <p>Per mile, calculated instantly</p>
+          </div>
+          <div>
+            <span class="stat">£25</span>
+            <p>Fixed booking fee</p>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="services" id="services" aria-labelledby="services-title">
+        <p class="eyebrow">Why book with us</p>
+        <h2 id="services-title">Discreet, dependable chauffeur service</h2>
+        <div class="service-grid">
+          <article>
+            <h3>Airport transfers</h3>
+            <p>Door-to-terminal transfers with your chosen pickup time and destination.</p>
+          </article>
+          <article>
+            <h3>Corporate travel</h3>
+            <p>Professional journeys for meetings, conferences, and client hospitality.</p>
+          </article>
+          <article>
+            <h3>Events & occasions</h3>
+            <p>Luxury arrivals for weddings, dinners, proms, sporting events, and more.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="booking" id="booking" aria-labelledby="booking-title">
+        <div class="booking__intro">
+          <p class="eyebrow">Instant booking request</p>
+          <h2 id="booking-title">Plan your journey</h2>
+          <p>
+            Enter your journey details and estimated mileage to calculate your
+            fare automatically. Our rate is £2 per mile plus a £25 booking fee.
+          </p>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <fieldset>
+            <legend>Your details</legend>
+            <div class="field-grid">
+              <label>
+                Full name
+                <input type="text" name="fullName" autocomplete="name" placeholder="Jane Smith" required />
+              </label>
+              <label>
+                Email address
+                <input type="email" name="email" autocomplete="email" placeholder="jane@example.com" required />
+              </label>
+              <label>
+                Phone number
+                <input type="tel" name="phone" autocomplete="tel" placeholder="07123 456789" required />
+              </label>
+              <label>
+                Number of passengers
+                <input type="number" name="passengers" min="1" max="7" value="1" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Journey details</legend>
+            <div class="field-grid">
+              <label>
+                Date
+                <input type="date" name="date" required />
+              </label>
+              <label>
+                Time
+                <input type="time" name="time" required />
+              </label>
+              <label>
+                Pickup place
+                <input type="text" name="pickup" placeholder="Home, hotel, airport, or venue" required />
+              </label>
+              <label>
+                Destination
+                <input type="text" name="destination" placeholder="Final drop-off address" required />
+              </label>
+              <label>
+                Estimated distance (miles)
+                <input id="miles" type="number" name="miles" min="0" step="0.1" placeholder="e.g. 18.5" required />
+              </label>
+              <label>
+                Special requests
+                <textarea name="notes" rows="4" placeholder="Flight number, luggage, child seat, waiting time..."></textarea>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment method</legend>
+            <div class="payment-options" role="radiogroup" aria-label="Payment method">
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Card" checked />
+                <span>Card payment</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Bank transfer" />
+                <span>Bank transfer</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Pay on arrival" />
+                <span>Pay on arrival</span>
+              </label>
+            </div>
+            <div class="field-grid card-fields" id="cardFields">
+              <label>
+                Cardholder name
+                <input type="text" name="cardName" autocomplete="cc-name" placeholder="Name on card" />
+              </label>
+              <label>
+                Card number
+                <input type="text" name="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" />
+              </label>
+              <label>
+                Expiry date
+                <input type="text" name="expiry" autocomplete="cc-exp" placeholder="MM/YY" />
+              </label>
+              <label>
+                CVC
+                <input type="text" name="cvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" />
+              </label>
+            </div>
+            <p class="secure-note">This demo booking form does not process payments; it captures your preferred method for confirmation.</p>
+          </fieldset>
+
+          <aside class="quote" aria-live="polite">
+            <div class="quote__row">
+              <span>Rate</span>
+              <strong>£2.00 / mile</strong>
+            </div>
+            <div class="quote__row">
+              <span>Booking fee</span>
+              <strong>£25.00</strong>
+            </div>
+            <div class="quote__row">
+              <span>Distance charge</span>
+              <strong id="distanceCharge">£0.00</strong>
+            </div>
+            <div class="quote__total">
+              <span>Estimated total</span>
+              <strong id="totalPrice">£25.00</strong>
+            </div>
+          </aside>
+
+          <button class="button button--primary booking-form__submit" type="submit">Request booking</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <p>&copy; 2026 Regal Chauffeuring. Executive travel with transparent pricing.</p>
+      <a href="mailto:bookings@regalchauffeuring.example">bookings@regalchauffeuring.example</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
